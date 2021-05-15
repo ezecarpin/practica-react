@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment, useState} from 'react'
 
-function App() {
+const Listas = () => {
+
+  const [num, setNum] = useState([1,2,3,4,5])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Fragment>
+          <ul>
+            {
+              num.map((item, index) => 
+                  <li key={index}>
+                      {item} - {index} 
+                  </li>
+                  )
+            }
+          </ul>
+      </Fragment>
+    )
 }
-
-export default App;
+export default Listas
